@@ -1,0 +1,108 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Validar submenus do menu \"Para Você\"",
+        "description": "",
+        "id": "simulador-de-câmbio;validar-submenus-do-menu-\"para-você\"",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24150836362,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "O usuario esta na home",
+            "match": {
+              "location": "LoginEcommerce.o_usuario_esta_na_home()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "O usuario passar o mouse sobre o menu Para Você",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "Todos os submenus devem ser listados",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Simulador de Câmbio",
+    "description": "Description: Valida menus da aplicação",
+    "id": "simulador-de-câmbio",
+    "keyword": "Feature",
+    "uri": "menus.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Preencher dados de compra no simulador",
+        "description": "",
+        "id": "simulador-de-câmbio;preencher-dados-de-compra-no-simulador",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 20648647412,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "O usuario esta na home",
+            "match": {
+              "location": "LoginEcommerce.o_usuario_esta_na_home()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10703541230,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "O usuario preencher os valores da compra",
+            "match": {
+              "location": "LoginEcommerce.o_usuario_preencher_os_valores_da_compra()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 345858433,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "O usuario deve ser redirecionado para o cadastro do ecommerce",
+            "match": {
+              "location": "LoginEcommerce.o_usuario_deve_ser_redirecionado_para_o_cadastro_do_ecommerce()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Simulador de Câmbio",
+    "description": "Description: Testa cotações de câmbio",
+    "id": "simulador-de-câmbio",
+    "keyword": "Feature",
+    "uri": "simuladorDeCambio.feature"
+  }
+]

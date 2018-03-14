@@ -1,0 +1,114 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Validar submenus do menu \"Para Você\"",
+        "description": "",
+        "id": "menus;validar-submenus-do-menu-\"para-você\"",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 27679238443,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "O usuario esta na home",
+            "match": {
+              "location": "SimuladorCompraTest.o_usuario_esta_na_home()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 25073876250,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "O usuario passar o mouse sobre o menu Para Você",
+            "match": {
+              "location": "ValidarMenusTest.o_usuario_passar_o_mouse_sobre_o_menu_Para_Você()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 556355885,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Todos os submenus devem ser listados",
+            "match": {
+              "location": "ValidarMenusTest.todos_os_submenus_devem_ser_listados()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Menus",
+    "description": "Description: Valida menus da aplicação",
+    "id": "menus",
+    "keyword": "Feature",
+    "uri": "menus.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Preencher dados de compra no simulador",
+        "description": "",
+        "id": "simulador-de-câmbio;preencher-dados-de-compra-no-simulador",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 20341171317,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "O usuario esta na home",
+            "match": {
+              "location": "SimuladorCompraTest.o_usuario_esta_na_home()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2593749991,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "O usuario preencher os valores da compra",
+            "match": {
+              "location": "SimuladorCompraTest.o_usuario_preencher_os_valores_da_compra()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 33765223,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "O usuario deve ser redirecionado para o cadastro do ecommerce",
+            "match": {
+              "location": "SimuladorCompraTest.o_usuario_deve_ser_redirecionado_para_o_cadastro_do_ecommerce()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Simulador de Câmbio",
+    "description": "Description: Testa cotações de câmbio",
+    "id": "simulador-de-câmbio",
+    "keyword": "Feature",
+    "uri": "simuladorDeCambio.feature"
+  }
+]
