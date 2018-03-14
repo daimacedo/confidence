@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PortalHomePage {
-	private int quantidadeSubMenusParaVoce;
+	
 	WebDriver driver;
 	
 	@FindBy(xpath = "//*[@id='simulate']/div[1]/a/p") 
@@ -28,7 +28,7 @@ public class PortalHomePage {
 	@FindBy(xpath= "//a[contains(text(),'Para você')]")
 	WebElement menuParaVoce;
 	
-	@FindBy(xpath= "//ul[contains(@id,'menu-menu-topo')]/li[2]/ul/li")
+	@FindBy(xpath= "//ul[contains(@id,'menu-menu-topo')]/li[2]/ul/li/a")
 	java.util.List<WebElement> subMenusParaVoce;
 	
 	
@@ -68,41 +68,18 @@ public class PortalHomePage {
 		action.moveToElement(we).click().build().perform();
 	}
 	
-	public boolean islistaDeElementosSubmenuParaVoceVisivel()
+	public java.util.List<WebElement> getListaSubMenusParaVoce()
 	{
-	
 		java.util.List<WebElement> listaSubMenusParaVoce = subMenusParaVoce;
-		
-		boolean isVisible = false;
-		quantidadeSubMenusParaVoce = listaSubMenusParaVoce.size();
-		System.out.println("Size of the list: " + quantidadeSubMenusParaVoce);
-		for (int i=0; i<quantidadeSubMenusParaVoce; i++) {
-			isVisible = listaSubMenusParaVoce.get(i).isDisplayed();
-			if (!isVisible) {
-				return false;
-			}
-		System.out.println(listaSubMenusParaVoce.get(i).getText());	
+		for (int i=0; i<listaSubMenusParaVoce.size(); i++) {
+			System.out.println(listaSubMenusParaVoce.get(i).getText());	
 		}
-		return true;
-	}	
-	
-	public int getQuantidadeDeSubMenusParaVoce()
-	{
-		return this.quantidadeSubMenusParaVoce;
+		return listaSubMenusParaVoce;
+		
 	}
 	
-//	public String textoSubMenuParaVoce()
-//	{
-//		java.util.List<WebElement> listaSubMenusParaVoce = subMenusParaVoce;
-//		
-//		int size = listaSubMenusParaVoce.size();
-//		System.out.println("Size of the list: " + size);
-//		for (int i=0; i<size; i++) {
-//		
-//			}
-//			
-//		return textoSubMenus;
-//	-- Ajuda do borto para validar nomes
-//	}
+	
+	
+
 
 }

@@ -7,7 +7,7 @@ When O usuario preencher os valores da compra
 Then O usuario deve ser redirecionado para o cadastro do ecommerce
 
 
-#
+
 #Scenario: LogOut
 #When User logOut the application
 #Then He can't acess the practice page
