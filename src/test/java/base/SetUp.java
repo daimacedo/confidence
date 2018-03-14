@@ -16,7 +16,7 @@ public class SetUp {
 	
 	public SetUp() {
 		
-		System.setProperty("webdriver..driver","/home/daiane.macedo/workspace2/cucumber/resources/seleniumDrivers/geckodriver");
+		System.setProperty("webdriver.gecko.driver","/home/daiane.macedo/workspace2/cucumber/resources/seleniumDrivers/geckodriver");
 		driver = new FirefoxDriver();
 
 		
