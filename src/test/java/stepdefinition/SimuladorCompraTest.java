@@ -13,15 +13,15 @@ public class SimuladorCompraTest {
 	
 	private PortalHomePage portalHomePage;
 	private SetUp setUp;
-	
+
 	public SimuladorCompraTest() {
 		System.out.println("JAIR PASSOU POR AQUI COM UMA GARRAFA DE CERVEJA");
 		setUp = new SetUp();
 		portalHomePage = new PortalHomePage(setUp.getDriver());
 	}
-	
-	@Given("^O usuario esta na home$")
-	public void o_usuario_esta_na_home() throws Throwable {
+
+	@Given("^O usuario esta na home 2$")
+	public void o_usuario_esta_na_home_2() throws Throwable {
 		//SetUpTest("https://www.confidencecambio.com.br");
 	}
 
@@ -35,7 +35,7 @@ public class SimuladorCompraTest {
 		assertThat(portalHomePage.getEcommercePageTittle()).isEqualToIgnoringCase("Compra Online - Confidence Câmbio");
 		assertThat(portalHomePage.getUrl()).containsIgnoringCase("https://www.confidencecambio.com.br/ecommerce");
 	}
-	
+
 	@After
 	public void jair() {
 		setUp.tearDown();

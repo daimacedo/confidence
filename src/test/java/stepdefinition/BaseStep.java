@@ -1,27 +1,21 @@
-package base;
-
-import java.util.concurrent.TimeUnit;
+package stepdefinition;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class SetUp {
-	
-	protected WebDriver driver;
-	
-	public SetUp() {
+import java.util.concurrent.TimeUnit;
+
+public abstract class BaseStep implements BaseStepInterface{
+
+	WebDriver driver;
+
+	public void before() {
 		System.setProperty("webdriver.gecko.driver","./seleniumDrivers/geckodriver");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://www.confidencecambio.com.br");
 	}
-	
-	public void tearDown(){
+
+	public void after() {
 		driver.close();
 	}
-	
-	public WebDriver getDriver(){
-		return this.driver;
-	}
-	
 }
