@@ -1,18 +1,16 @@
 
 package stepdefinition;
 import static org.assertj.core.api.Assertions.assertThat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebElement;
-
 import base.SetUp;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.PortalHomePage;
+import utils.GenericMethods;
 
 public class ValidarMenusTest extends SetUp {
 
@@ -54,9 +52,18 @@ public class ValidarMenusTest extends SetUp {
 	public void todos_os_submenus_do_Menu_Para_Voce_devem_ser_listados() throws Throwable {
 		PortalHomePage homePage = new PortalHomePage(driver);
 		List<WebElement> listaSubMenuParaVoce = homePage.getListaOpcoesMenuParaVoce();
-		List<String> submenus = Arrays.asList(opcoesMenuParaVoce);
+		String path = "/home/daiane.macedo/workspace2/portal/src/test/java/files/menuParaVoce";
+		
+		GenericMethods util = new GenericMethods();
+		ArrayList<String> submenus = util.lerArquivo(path);
+//         
+//         for(String elemento: submenus)	{
+// 			System.out.println(elemento);
+// 		}
+//         
+//      
 		for (WebElement elemento : listaSubMenuParaVoce) {
-			assertThat(submenus.contains(elemento.getText().toLowerCase())).isTrue();
+			assertThat(submenus.contains(elemento.getText())).isTrue();
 		}
 		assertThat(listaSubMenuParaVoce.size()).isEqualTo(submenus.size());
 		tearDown();

@@ -12,6 +12,6 @@ import cucumber.api.junit.Cucumber;
 		tags= {"~@not_run"},
 		format={"json:src/test/java/reports/cucumber.json"})
 		//plugin = {"json", "html:src/test/java/reports" })
-public class Run {
+public class RunTest {
 
 }

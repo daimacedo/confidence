@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 25126475910,
+              "duration": 15384105271,
               "status": "passed"
             },
             "line": 6,
@@ -24,7 +24,7 @@
           },
           {
             "result": {
-              "duration": 1930731826,
+              "duration": 1236309598,
               "status": "passed"
             },
             "line": 7,
@@ -36,60 +36,13 @@
           },
           {
             "result": {
-              "duration": 226302018,
-              "error_message": "org.junit.ComparisonFailure: expected:\u003c[tru]e\u003e but was:\u003c[fals]e\u003e\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat stepdefinition.ValidarMenusTest.todos_os_submenus_do_Menu_Para_Voce_devem_ser_listados(ValidarMenusTest.java:59)\n\tat ✽.Then Todos os submenus do Menu Para Voce devem ser listados(menus.feature:8)\n",
-              "status": "failed"
+              "duration": 410236985,
+              "status": "passed"
             },
             "line": 8,
             "name": "Todos os submenus do Menu Para Voce devem ser listados",
             "match": {
               "location": "ValidarMenusTest.todos_os_submenus_do_Menu_Para_Voce_devem_ser_listados()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Validar submenus do menu \"Produtos \u003e Pessoa Fisica\"",
-        "description": "",
-        "id": "menus;validar-submenus-do-menu-\"produtos-\u003e-pessoa-fisica\"",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 17750789876,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "O usuario esta na home",
-            "match": {
-              "location": "ValidarMenusTest.o_usuario_esta_na_home()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1100786327,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "O usuario passar o mouse sobre o menu Produtos \u003e Pessoa Fisica",
-            "match": {
-              "location": "ValidarMenusTest.o_usuario_passar_o_mouse_sobre_o_menu_Produtos_Pessoa_Fisica()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3306608614,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "Todos os submenus do menu Produtos \u003e Pessoa Fisica devem ser listados",
-            "match": {
-              "location": "ValidarMenusTest.todos_os_submenus_do_menu_Produtos_Pessoa_Fisica_devem_ser_listados()"
             },
             "keyword": "Then "
           }
