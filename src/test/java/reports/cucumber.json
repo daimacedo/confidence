@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 13377990514,
+              "duration": 25126475910,
               "status": "passed"
             },
             "line": 6,
@@ -24,7 +24,7 @@
           },
           {
             "result": {
-              "duration": 8098626519,
+              "duration": 1930731826,
               "status": "passed"
             },
             "line": 7,
@@ -36,8 +36,9 @@
           },
           {
             "result": {
-              "duration": 2085705073,
-              "status": "passed"
+              "duration": 226302018,
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c[tru]e\u003e but was:\u003c[fals]e\u003e\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat stepdefinition.ValidarMenusTest.todos_os_submenus_do_Menu_Para_Voce_devem_ser_listados(ValidarMenusTest.java:59)\n\tat ✽.Then Todos os submenus do Menu Para Voce devem ser listados(menus.feature:8)\n",
+              "status": "failed"
             },
             "line": 8,
             "name": "Todos os submenus do Menu Para Voce devem ser listados",
@@ -58,7 +59,7 @@
         "steps": [
           {
             "result": {
-              "duration": 16517688643,
+              "duration": 17750789876,
               "status": "passed"
             },
             "line": 12,
@@ -70,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 1065865540,
+              "duration": 1100786327,
               "status": "passed"
             },
             "line": 13,
@@ -82,7 +83,7 @@
           },
           {
             "result": {
-              "duration": 560668893,
+              "duration": 3306608614,
               "status": "passed"
             },
             "line": 14,

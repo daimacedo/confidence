@@ -17,7 +17,6 @@ public class SetUp {
 		
 	}
 	
-
 	public void tearDown(){
 		driver.close();
 	}

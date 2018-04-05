@@ -73,7 +73,7 @@ public class ValidarMenusTest extends SetUp {
 		PortalHomePage homePage = new PortalHomePage(driver);
 		List<WebElement> listaSubMenusProdutosPessoaFisica = homePage.getListaOpcoesMenuProdutosPessoaFisica();
 		List<String> submenus = Arrays.asList(opcoesMenuProdutosPessoaFisica);
-		
+		 
 		for(WebElement elemento: listaSubMenusProdutosPessoaFisica)	{
 			assertThat(submenus.contains(elemento.getText().toUpperCase())).isTrue();
 		}

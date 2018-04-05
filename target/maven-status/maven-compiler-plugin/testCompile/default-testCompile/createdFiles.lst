@@ -1,0 +1,5 @@
+pages/EcommerceSimuladorEspecie.class
+stepdefinition/ValidarMenusTest.class
+stepdefinition/SimuladorCompraTest.class
+base/SetUp.class
+pages/PortalHomePage.class
