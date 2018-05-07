@@ -2,9 +2,11 @@
 package stepdefinition;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.SynchronousQueue;
+
 import org.openqa.selenium.WebElement;
 import base.SetUp;
 import cucumber.api.java.en.Given;
@@ -15,25 +17,19 @@ import utils.GenericMethods;
 
 public class ValidarMenusTest extends SetUp {
 
-	private String[] opcoesMenuParaVoce = { "comprar moeda estrangeira", "enviar e receber dinheiro do exterior",
-			"pagar contas no exterior", "trocar cheques internacionais" };
-
-	private String[] opcoesMenuProdutosPessoaFisica = { "CARTÃO PRÉ-PAGO", "CHEQUES INTERNACIONAIS E TRAVELLERS CHECKS",
-			"DELIVERY DE MOEDAS", "MOEDA EM ESPÉCIE", "MONEYGRAM", "REMESSAS E PAGAMENTOS INTERNACIONAIS CONFIDENCE",
-			"REGISTRO DE RDE-ROF", "REGISTRO SISCOSERV", "SEGURO DO VIAJANTE", "XPRESS MONEY", "TABELA DE TARIFAS" };
-
-	private String[] hrefOpcoesMenuProdutosPessoaFisica = {
-			"https://www.confidencecambio.com.br/produtos/cartao-pre-pago-internacional/",
-			"https://www.confidencecambio.com.br/produtos/cheques-internacionais/",
-			"https://www.confidencecambio.com.br/produtos/delivery/",
-			"https://www.confidencecambio.com.br/produtos/moeda-em-especie/",
-			"https://www.confidencecambio.com.br/produtos/moneygram/",
-			"https://www.confidencecambio.com.br/produtos/remessas-internacionais/",
-			"https://www.bancoconfidence.com.br/produtos/registro-de-rde-rof/",
-			"https://www.bancoconfidence.com.br/produtos/registro-siscoserv/",
-			"https://www.confidencecambio.com.br/produtos/seguro-do-viajante/",
-			"https://www.confidencecambio.com.br/produtos/xpress-money/",
-			"https://www.confidencecambio.com.br/download/CONFIDENCE_TABELA_1608.pdf" };
+	// private String[] hrefOpcoesMenuProdutosPessoaFisica = {
+	// "https://www.confidencecambio.com.br/produtos/cartao-pre-pago-internacional/",
+	// "https://www.confidencecambio.com.br/produtos/cheques-internacionais/",
+	// "https://www.confidencecambio.com.br/produtos/delivery/",
+	// "https://www.confidencecambio.com.br/produtos/moeda-em-especie/",
+	// "https://www.confidencecambio.com.br/produtos/moneygram/",
+	// "https://www.confidencecambio.com.br/produtos/remessas-internacionais/",
+	// "https://www.bancoconfidence.com.br/produtos/registro-de-rde-rof/",
+	// "https://www.bancoconfidence.com.br/produtos/registro-siscoserv/",
+	// "https://www.confidencecambio.com.br/produtos/rublo-russo/",
+	// "https://www.confidencecambio.com.br/produtos/seguro-do-viajante/",
+	// "https://www.confidencecambio.com.br/produtos/xpress-money/",
+	// "https://www.confidencecambio.com.br/download/CONFIDENCE_TABELA_1608.pdf" };
 
 	@Given("^O usuario esta na home$")
 	public void o_usuario_esta_na_home() {
@@ -56,10 +52,11 @@ public class ValidarMenusTest extends SetUp {
 		GenericMethods util = new GenericMethods();
 		ArrayList<String> submenus = util.lerArquivo(path);
 
-		for (WebElement elemento : listaSubMenuParaVoce) {
-			assertThat(submenus.contains(elemento.getText())).isTrue();
-		}
 		try {
+			for (WebElement elemento : listaSubMenuParaVoce) {
+				assertThat(submenus.contains(elemento.getText())).isTrue();
+			}
+
 			assertThat(listaSubMenuParaVoce.size()).isEqualTo(submenus.size());
 		} finally {
 			tearDown();
@@ -74,21 +71,32 @@ public class ValidarMenusTest extends SetUp {
 	}
 
 	@Then("^Todos os submenus do menu Produtos > Pessoa Fisica devem ser listados$")
-	public void todos_os_submenus_do_menu_Produtos_Pessoa_Fisica_devem_ser_listados() {
+	public void todos_os_submenus_do_menu_Produtos_Pessoa_Fisica_devem_ser_listados() throws IOException {
 		PortalHomePage homePage = new PortalHomePage(driver);
 		List<WebElement> listaSubMenusProdutosPessoaFisica = homePage.getListaOpcoesMenuProdutosPessoaFisica();
-		List<String> submenus = Arrays.asList(opcoesMenuProdutosPessoaFisica);
+		String path = "/home/daiane.macedo/workspace2/portal/src/test/java/files/menuProdutosPessoaFisica";
+		GenericMethods util = new GenericMethods();
 
-		for (WebElement elemento : listaSubMenusProdutosPessoaFisica) {
-			assertThat(submenus.contains(elemento.getText().toUpperCase())).isTrue();
-		}
+		List<String> submenus = util.lerArquivo(path);
+		try {
+			for (WebElement elemento : listaSubMenusProdutosPessoaFisica) {
+				assertThat(submenus.contains(elemento.getText().toUpperCase())).isTrue();
 
-		List<String> hrefSubMenus = Arrays.asList(hrefOpcoesMenuProdutosPessoaFisica);
-		try{
-			for (WebElement elemento : listaSubMenusProdutosPessoaFisica){
-				assertThat(hrefSubMenus.contains(elemento.getAttribute("href"))).isTrue();
 			}
-		} finally{
+
+			String URLOpcoesMenuProdutosPessoaFisica = "/home/daiane.macedo/workspace2/portal/src/test/java/files/menuProdutosPessoaFisica";
+			List<String> hrefSubMenus = util.lerArquivo(URLOpcoesMenuProdutosPessoaFisica);
+
+			for (int i = 0; i < listaSubMenusProdutosPessoaFisica.size(); i++) {
+				System.out.println(listaSubMenusProdutosPessoaFisica.get(i).getText());
+			}
+
+			for (int i=0; i <listaSubMenusProdutosPessoaFisica.size(); i++) {
+				System.out.println(listaSubMenusProdutosPessoaFisica.get(i).getAttribute("href"));
+				assertThat(hrefSubMenus.contains(listaSubMenusProdutosPessoaFisica.get(i).getAttribute("href"))).isTrue();
+
+			}
+		} finally {
 
 			System.out.println(listaSubMenusProdutosPessoaFisica.size());
 			tearDown();

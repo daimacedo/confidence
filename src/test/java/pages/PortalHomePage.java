@@ -53,7 +53,7 @@ public class PortalHomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void preencherValoresCompra(String moedaOperacional, String valorMoedaOperacional) {
+	public void realizaCotaçãoCompra(String moedaOperacional, String valorMoedaOperacional) {
 
 		this.comboMoedaEspecie.click();
 		this.tipoMoedaEspecie.click();
@@ -115,11 +115,6 @@ public class PortalHomePage {
 	public List<WebElement> getListaOpcoesMenuProdutosPessoaFisica()
 	{
 		List<WebElement> listaSubMenusProdutosPessoaFisica = subMenusProdutosPessoaFisica;
-//		for(int i=0; i<listaSubMenusProdutosPessoaFisica.size(); i++)
-//		{
-//			System.out.println(listaSubMenusProdutosPessoaFisica.get(i).getText());
-//		}
-		//System.out.println(listaSubMenusProdutosPessoaFisica.size());
 		return listaSubMenusProdutosPessoaFisica;
 	}
 	

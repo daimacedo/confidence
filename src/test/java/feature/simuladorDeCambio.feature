@@ -1,4 +1,3 @@
-@not_run
 Feature: Simulador de Câmbio
   Description: Testa cotações de câmbio
 

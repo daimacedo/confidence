@@ -23,14 +23,20 @@ public class SimuladorCompraTest extends SetUp {
 	@When("^O usuario preencher os valores da compra$")
 	public void o_usuario_preencher_os_valores_da_compra() throws Throwable {
 		PortalHomePage homePage = new PortalHomePage(driver);
-		homePage.preencherValoresCompra("Dólar", "10000");
+		homePage.realizaCotaçãoCompra("Dólar", "10000");
 	}
 
 	@Then("^O usuario deve ser redirecionado para o cadastro do ecommerce$")
 	public void o_usuario_deve_ser_redirecionado_para_o_cadastro_do_ecommerce() throws Throwable {
+		
 		PortalHomePage homePage = new PortalHomePage(driver);
+		try {
 		assertThat(homePage.getEcommercePageTittle()).isEqualToIgnoringCase("Compra Online - Confidence Câmbio");
 		assertThat(homePage.getUrl()).containsIgnoringCase("https://www.confidencecambio.com.br/ecommerce");
+		}
+		finally {
+			tearDown();
+		}
 	}
 
 }

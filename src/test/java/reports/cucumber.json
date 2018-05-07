@@ -3,19 +3,19 @@
     "line": 1,
     "elements": [
       {
-        "line": 5,
-        "name": "Validar submenus do menu \"Para Você\"",
+        "line": 12,
+        "name": "Validar submenus do menu \"Produtos \u003e Pessoa Fisica\"",
         "description": "",
-        "id": "menus;validar-submenus-do-menu-\"para-você\"",
+        "id": "menus;validar-submenus-do-menu-\"produtos-\u003e-pessoa-fisica\"",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 46055469664,
+              "duration": 21300507073,
               "status": "passed"
             },
-            "line": 6,
+            "line": 13,
             "name": "O usuario esta na home",
             "match": {
               "location": "ValidarMenusTest.o_usuario_esta_na_home()"
@@ -24,28 +24,34 @@
           },
           {
             "result": {
-              "duration": 2942567813,
+              "duration": 1341009967,
               "status": "passed"
             },
-            "line": 7,
-            "name": "O usuario passar o mouse sobre o menu Para Você",
+            "line": 14,
+            "name": "O usuario passar o mouse sobre o menu Produtos \u003e Pessoa Fisica",
             "match": {
-              "location": "ValidarMenusTest.o_usuario_passar_o_mouse_sobre_o_menu_Para_Você()"
+              "location": "ValidarMenusTest.o_usuario_passar_o_mouse_sobre_o_menu_Produtos_Pessoa_Fisica()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 415187529,
-              "error_message": "org.junit.ComparisonFailure: expected:\u003c[tru]e\u003e but was:\u003c[fals]e\u003e\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat stepdefinition.ValidarMenusTest.todos_os_submenus_do_Menu_Para_Voce_devem_ser_listados(ValidarMenusTest.java:66)\n\tat ✽.Then Todos os submenus do Menu Para Voce devem ser listados(menus.feature:8)\n",
+              "duration": 715219074,
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c[tru]e\u003e but was:\u003c[fals]e\u003e\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat stepdefinition.ValidarMenusTest.todos_os_submenus_do_menu_Produtos_Pessoa_Fisica_devem_ser_listados(ValidarMenusTest.java:96)\n\tat ✽.Then Todos os submenus do menu Produtos \u003e Pessoa Fisica devem ser listados(menus.feature:15)\n",
               "status": "failed"
             },
-            "line": 8,
-            "name": "Todos os submenus do Menu Para Voce devem ser listados",
+            "line": 15,
+            "name": "Todos os submenus do menu Produtos \u003e Pessoa Fisica devem ser listados",
             "match": {
-              "location": "ValidarMenusTest.todos_os_submenus_do_Menu_Para_Voce_devem_ser_listados()"
+              "location": "ValidarMenusTest.todos_os_submenus_do_menu_Produtos_Pessoa_Fisica_devem_ser_listados()"
             },
             "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@run"
           }
         ]
       }
@@ -55,67 +61,5 @@
     "id": "menus",
     "keyword": "Feature",
     "uri": "menus.feature"
-  },
-  {
-    "line": 2,
-    "elements": [
-      {
-        "line": 5,
-        "name": "Preencher dados de compra no simulador",
-        "description": "",
-        "id": "simulador-de-câmbio;preencher-dados-de-compra-no-simulador",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 37792851143,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "O usuario esta na home",
-            "match": {
-              "location": "ValidarMenusTest.o_usuario_esta_na_home()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 5482579771,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "O usuario preencher os valores da compra",
-            "match": {
-              "location": "SimuladorCompraTest.o_usuario_preencher_os_valores_da_compra()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 12848961,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "O usuario deve ser redirecionado para o cadastro do ecommerce",
-            "match": {
-              "location": "SimuladorCompraTest.o_usuario_deve_ser_redirecionado_para_o_cadastro_do_ecommerce()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "Simulador de Câmbio",
-    "description": "Description: Testa cotações de câmbio",
-    "id": "simulador-de-câmbio",
-    "keyword": "Feature",
-    "uri": "simuladorDeCambio.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@not_run"
-      }
-    ]
   }
 ]
