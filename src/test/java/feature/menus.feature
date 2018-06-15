@@ -8,7 +8,7 @@ Feature: Menus
     Then Todos os submenus do Menu Para Voce devem ser listados
 
 
-@run
+
   Scenario: Validar submenus do menu "Produtos > Pessoa Fisica"
     Given O usuario esta na home
     When O usuario passar o mouse sobre o menu Produtos > Pessoa Fisica

@@ -84,16 +84,12 @@ public class ValidarMenusTest extends SetUp {
 
 			}
 
-			String URLOpcoesMenuProdutosPessoaFisica = "/home/daiane.macedo/workspace2/portal/src/test/java/files/menuProdutosPessoaFisica";
+			String URLOpcoesMenuProdutosPessoaFisica = "/home/daiane.macedo/workspace2/portal/src/test/java/files/URLOpcoesMenuProdutosPessoaFisica";
 			List<String> hrefSubMenus = util.lerArquivo(URLOpcoesMenuProdutosPessoaFisica);
 
-			for (int i = 0; i < listaSubMenusProdutosPessoaFisica.size(); i++) {
-				System.out.println(listaSubMenusProdutosPessoaFisica.get(i).getText());
-			}
-
-			for (int i=0; i <listaSubMenusProdutosPessoaFisica.size(); i++) {
-				System.out.println(listaSubMenusProdutosPessoaFisica.get(i).getAttribute("href"));
-				assertThat(hrefSubMenus.contains(listaSubMenusProdutosPessoaFisica.get(i).getAttribute("href"))).isTrue();
+			for (WebElement elemento : listaSubMenusProdutosPessoaFisica){
+							
+				assertThat(hrefSubMenus.contains(elemento.getAttribute("href"))).isTrue();
 
 			}
 		} finally {

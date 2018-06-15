@@ -2,11 +2,20 @@ package pages;
 
 import java.util.List;
 
+import org.joda.time.format.ISOPeriodFormat;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.w3c.dom.css.ElementCSSInlineStyle;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Element;
+
+import utils.GenericMethods;
 
 public class PortalHomePage {
 
@@ -47,6 +56,11 @@ public class PortalHomePage {
 
 	@FindBy(xpath = "//button[text()='Não Receber']")
 	WebElement btnNaoReceberOfertas;
+	
+	@FindBy(xpath="//a[text()='Alerta de Câmbio']")
+	WebElement submenuAlertaDeCambio;
+	
+
 
 	public PortalHomePage(WebDriver driver) {
 		this.driver = driver;
@@ -76,13 +90,15 @@ public class PortalHomePage {
 
 	public void selecionaMenuParaVoce() {
 
-		if (isElementVisible(btnFecharPopUpFiqueAtento)) {
-			btnFecharPopUpFiqueAtento.click();
-		}
-		if (isElementVisible(btnNaoReceberOfertas)) {
-			btnNaoReceberOfertas.click();
-		}
+		
+//		if (isElementVisible(btnFecharPopUpFiqueAtento)) {
+//			btnFecharPopUpFiqueAtento.click();
+//		}
+//		if (isElementVisible(btnNaoReceberOfertas)) {
+//			btnNaoReceberOfertas.click();
+//		}
 
+	
 		Actions action = new Actions(driver);
 		WebElement we = menuParaVoce;
 		action.moveToElement(we).click().build().perform();
@@ -90,19 +106,24 @@ public class PortalHomePage {
 	
 	public void selecionaMenuProdutos()
 	{
-		if (isElementVisible(btnFecharPopUpFiqueAtento)) {
-			btnFecharPopUpFiqueAtento.click();
-		}
-		if (isElementVisible(btnNaoReceberOfertas)) {
-			btnNaoReceberOfertas.click();
-		}
+//		GenericMethods utils = new GenericMethods();
+//		if (utils.isElementVisible(btnFecharPopUpFiqueAtento)) {
+//			btnFecharPopUpFiqueAtento.click();
+//		}
+//		if (utils.isElementVisible(btnNaoReceberOfertas)) {
+//			btnNaoReceberOfertas.click();
+//		}
 
+		
 		Actions action = new Actions(driver);
 		WebElement we = menuProdutos;
 		action.moveToElement(we).click().build().perform();
 	}
 
 	public java.util.List<WebElement> getListaOpcoesMenuParaVoce(){
+		
+		WebDriverWait wait = new WebDriverWait(driver, 1);
+		wait.until(ExpectedConditions.visibilityOfAllElements((subMenusParaVoce)));
 		java.util.List<WebElement> listaSubMenusParaVoce = subMenusParaVoce;
 		for (int i = 0; i < listaSubMenusParaVoce.size(); i++) {
 			System.out.println(listaSubMenusParaVoce.get(i).getText());
@@ -114,12 +135,19 @@ public class PortalHomePage {
 	
 	public List<WebElement> getListaOpcoesMenuProdutosPessoaFisica()
 	{
+		WebDriverWait wait = new WebDriverWait(driver, 1);
+		wait.until(ExpectedConditions.visibilityOfAllElements((subMenusProdutosPessoaFisica)));
 		List<WebElement> listaSubMenusProdutosPessoaFisica = subMenusProdutosPessoaFisica;
 		return listaSubMenusProdutosPessoaFisica;
 	}
 	
-	public Boolean isElementVisible(WebElement element) {
-		return element.isDisplayed();
+
+	
+	public void selecionaSubMenuAlertaDeCambio()
+	{
+		Actions action = new Actions(driver);
+		WebElement we = submenuAlertaDeCambio;
+		action.moveToElement(we).click().build().perform();
 	}
 
 
