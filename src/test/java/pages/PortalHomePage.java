@@ -90,33 +90,19 @@ public class PortalHomePage {
 
 	public void selecionaMenuParaVoce() {
 
-		
-//		if (isElementVisible(btnFecharPopUpFiqueAtento)) {
-//			btnFecharPopUpFiqueAtento.click();
-//		}
-//		if (isElementVisible(btnNaoReceberOfertas)) {
-//			btnNaoReceberOfertas.click();
-//		}
-
-	
 		Actions action = new Actions(driver);
 		WebElement we = menuParaVoce;
+		WebDriverWait wait = new WebDriverWait(driver, 1);
+		wait.until(ExpectedConditions.visibilityOf((menuParaVoce)));
 		action.moveToElement(we).click().build().perform();
 	}
 	
 	public void selecionaMenuProdutos()
 	{
-//		GenericMethods utils = new GenericMethods();
-//		if (utils.isElementVisible(btnFecharPopUpFiqueAtento)) {
-//			btnFecharPopUpFiqueAtento.click();
-//		}
-//		if (utils.isElementVisible(btnNaoReceberOfertas)) {
-//			btnNaoReceberOfertas.click();
-//		}
-
-		
 		Actions action = new Actions(driver);
 		WebElement we = menuProdutos;
+		WebDriverWait wait = new WebDriverWait(driver, 1);
+		wait.until(ExpectedConditions.visibilityOf((menuProdutos)));
 		action.moveToElement(we).click().build().perform();
 	}
 
