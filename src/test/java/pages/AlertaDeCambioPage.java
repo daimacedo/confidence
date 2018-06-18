@@ -73,19 +73,11 @@ public class AlertaDeCambioPage {
 	public void selecionarMoedaDolar() throws Exception {
 
 		WebDriverWait wait = new WebDriverWait(driver, 3);
-		try {
-			if (isElementClickable(btnNaoReceberInformacoes)) {
-				btnNaoReceberInformacoes.click();
-			}
-		} catch (Exception e) {
-			throw new Exception(e);
-		} finally {
+		
 			textBuscaMoedas.clear();
 			textBuscaMoedas.sendKeys("Dolar");
 			wait.until(ExpectedConditions.visibilityOf(moedaDolar));
 			moedaDolar.click();
-		}
-	
 
 	}
 
