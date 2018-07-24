@@ -19,26 +19,26 @@ public class AlertaDeCambioTest extends SetUp {
 
 	@When("^O usuario selecionar o serviço Moeda em Especie$")
 	public void o_usuario_selecionar_o_serviço_Moeda_em_Especie() throws Throwable {
-		AlertaDeCambioPage alertaDeCambioPage = new AlertaDeCambioPage(driver);
-		alertaDeCambioPage.selecionarServicoMoedaEspecie();
+		new AlertaDeCambioPage(driver)
+			.selecionarServicoMoedaEspecie();
 	}
 
 	@When("^O usuario selecionar a moeda dolar$")
 	public void o_usuario_selecionar_a_moeda_dolar() throws Throwable {
-		AlertaDeCambioPage alertaDeCambioPage = new AlertaDeCambioPage(driver);
-		alertaDeCambioPage.selecionarMoedaDolar();
+		new AlertaDeCambioPage(driver)
+			.selecionarMoedaDolar();
 	}
 
 	@When("^O usuario selecionar receber todos os alertas$")
 	public void o_usuario_selecionar_receber_todos_os_alertas() throws Throwable {
-		AlertaDeCambioPage alertaDeCambioPage = new AlertaDeCambioPage(driver);
-		alertaDeCambioPage.selecionarTodosAlertas();
+		new AlertaDeCambioPage(driver)
+			.selecionarTodosAlertas();
 	}
 
 	@When("^O usuario digitar seu email$")
 	public void o_usuario_digitar_seu_email_e_cadastrar() throws Throwable {
-		AlertaDeCambioPage alertaDeCambioPage = new AlertaDeCambioPage(driver);
-		alertaDeCambioPage.preencherEmail("teste@teste.com");
+		new AlertaDeCambioPage(driver)
+			.preencherEmail("teste@teste.com");
 	
 	}
 

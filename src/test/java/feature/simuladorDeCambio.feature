@@ -7,7 +7,7 @@ Feature: Simulador de Câmbio
     When O usuario preencher os valores da compra
     Then O usuario deve ser redirecionado para o cadastro do ecommerce
 
-
+@Run
   Scenario: Receber Alerta de Cambio por email
     Given O usuario esta na home
     When O usuario passar o mouse sobre o menu Para Você

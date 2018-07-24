@@ -1,5 +1,9 @@
 pages/EcommerceSimuladorEspecie.class
 stepdefinition/ValidarMenusTest.class
+pages/AlertaDeCambioPage.class
 stepdefinition/SimuladorCompraTest.class
+stepdefinition/AlertaDeCambioTest.class
 base/SetUp.class
 pages/PortalHomePage.class
+utils/GenericMethods.class
+tests/RunTest.class

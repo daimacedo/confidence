@@ -12,36 +12,29 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GenericMethods {
 	WebDriver driver;
-	public ArrayList<String> lerArquivo(String path) throws IOException
-	{
+
+	public ArrayList<String> lerArquivo(String path) throws IOException {
 		ArrayList<String> submenus = new ArrayList<String>();
-		
+
 		FileReader fr = new FileReader(path);
 		BufferedReader br = new BufferedReader(fr);
-		
+
 		String teste;
-	    while((teste = br.readLine()) != null){
-	           	 submenus.add(teste);
-	         } 
-	    return submenus;
+		while ((teste = br.readLine()) != null) {
+			submenus.add(teste);
+		}
+		return submenus;
 	}
-	
-//	public Boolean isElementVisible(WebElement element) {
-////		
-////		 element.isDisplayed();
-////		 return true;
-////	}
-	
-//	public boolean existeElemento(WebElement idElemento) {
-//        try {
-//            
-//            return idElemento != null;
-//        } catch (NoSuchElementException e) {
-//            return false;
-//        }
-//    }
-	
 
+	public void waitUntilElementIsVisible(WebElement e) {
+		WebDriverWait wait = new WebDriverWait(driver, 3);
+		wait.until(ExpectedConditions.visibilityOf(e));
+	}
 
-
+	public WebElement waitUntilElementIsClickable(WebElement e)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 1);
+		wait.until(ExpectedConditions.elementToBeClickable(e));
+		return e;
+	}
 }

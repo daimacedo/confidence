@@ -1,6 +1,9 @@
 /home/daiane.macedo/workspace2/portal/src/test/java/stepdefinition/SimuladorCompraTest.java
 /home/daiane.macedo/workspace2/portal/src/test/java/tests/RunTest.java
 /home/daiane.macedo/workspace2/portal/src/test/java/stepdefinition/ValidarMenusTest.java
+/home/daiane.macedo/workspace2/portal/src/test/java/stepdefinition/AlertaDeCambioTest.java
+/home/daiane.macedo/workspace2/portal/src/test/java/pages/AlertaDeCambioPage.java
+/home/daiane.macedo/workspace2/portal/src/test/java/utils/GenericMethods.java
 /home/daiane.macedo/workspace2/portal/src/test/java/pages/EcommerceSimuladorEspecie.java
 /home/daiane.macedo/workspace2/portal/src/test/java/base/SetUp.java
 /home/daiane.macedo/workspace2/portal/src/test/java/pages/PortalHomePage.java

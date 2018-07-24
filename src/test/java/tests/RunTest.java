@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 		monochrome = true, 
 		features = "src/test/java/feature", 
 		glue = { "stepdefinition" }, 
-		tags= {"~@notRun"},
+		tags= {"@Run"},
 		format={"json:src/test/java/reports/cucumber.json"})
 		//plugin = {"json", "html:src/test/java/reports" })
 public class RunTest {

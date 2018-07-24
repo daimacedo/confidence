@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AlertaDeCambioPage {
+import utils.GenericMethods;
+
+public class AlertaDeCambioPage extends GenericMethods {
 
 	WebDriver driver;
 
@@ -48,9 +50,10 @@ public class AlertaDeCambioPage {
 	}
 
 	public boolean isElementClickable(WebElement elemento) {
-		WebDriverWait wait = new WebDriverWait(driver, 1);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elemento));
-		if (element != null) {
+		//WebDriverWait wait = new WebDriverWait(driver, 1);
+		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elemento));
+		WebElement element1 = waitUntilElementIsClickable(elemento);
+		if (element1 != null) {
 			return true;
 		} else
 			return false;
@@ -72,11 +75,10 @@ public class AlertaDeCambioPage {
 
 	public void selecionarMoedaDolar() throws Exception {
 
-		WebDriverWait wait = new WebDriverWait(driver, 3);
-		
+			waitUntilElementIsVisible(textBuscaMoedas);
 			textBuscaMoedas.clear();
 			textBuscaMoedas.sendKeys("Dolar");
-			wait.until(ExpectedConditions.visibilityOf(moedaDolar));
+			waitUntilElementIsVisible(moedaDolar);
 			moedaDolar.click();
 
 	}
